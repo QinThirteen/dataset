@@ -1,3 +1,4 @@
+# coding: utf-8
 import sys, os
 sys.path.append(os.pardir)  # 为了导入父目录的文件而进行的设定
 import numpy as np
@@ -31,7 +32,7 @@ for i in range(iters_num):
     grad = network.gradient(x_batch, t_batch)
     
     # 更新参数
-    for key in ('W1', 'b1', 'W2', 'b2', 'W3',):
+    for key in ('W1', 'b1', 'W2', 'b2', 'W3', 'b3'):
         network.params[key] -= learning_rate * grad[key]
     
     loss = network.loss(x_batch, t_batch)

@@ -40,7 +40,7 @@ def _load_data(file_name):
     print("Converting " + file_name + " to data Array ...")    
     with gzip.open(file_path, 'rb') as f:
             data = np.frombuffer(f.read(), np.uint8, offset=16)
-    data = data.reshape(-1, img_size)
+    data = data.reshape(-1, data_size)
     print("Done")
     
     return data
